@@ -5,7 +5,7 @@ coursework records. Each record has a title, course, due date, and status.
 
 ## Run locally
 
-1. Run `npm.cmd ci` in PowerShell.
+1. Run `npm.cmd install` in PowerShell.
 2. Create a `.env` file beside `app.js` and set `MONGODB_URI` to your
    MongoDB Atlas connection string. Allow your current IP in Atlas.
 3. Run `npm.cmd start`.
