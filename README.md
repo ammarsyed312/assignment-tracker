@@ -9,7 +9,7 @@ coursework records. Each record has a title, course, due date, and status.
 2. Create a `.env` file beside `app.js` and set `MONGODB_URI` to your
    MongoDB Atlas connection string. Allow your current IP in Atlas.
 3. Run `npm.cmd start`.
-4. Open <http://localhost:3000/> and select **View Assignments**.
+4. Open [https://assignment-tracker-tetf.onrender.com/assignments]and select **View Assignments**.
 
 ## Sources
 
