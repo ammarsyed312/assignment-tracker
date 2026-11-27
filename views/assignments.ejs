@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+<%- include('partials/main_nav') %>
+
+<main class="container flex-grow-1 py-5">
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+    <h1 class="mb-0"><%= title %></h1>
+    <a class="btn btn-primary" href="/assignments/new">Add Assignment</a>
+  </div>
+
+  <% if (assignments.length === 0) { %>
+    <p class="alert alert-light border">No assignments yet.</p>
+  <% } else { %>
+    <div class="table-responsive directory-panel">
+      <table class="table table-hover align-middle mb-0">
+        <caption class="visually-hidden">Saved assignments</caption>
+        <thead>
+          <tr>
+            <th scope="col">Assignment</th>
+            <th scope="col">Course</th>
+            <th scope="col">Due date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% assignments.forEach(function(assignment) { %>
+            <tr>
+              <th scope="row"><%= assignment.title %></th>
+              <td><%= assignment.course %></td>
+              <td class="text-nowrap"><%= assignment.dueDate.toISOString().slice(0, 10) %></td>
+              <td><span class="badge text-bg-light border"><%= assignment.status %></span></td>
+              <td>
+                <div class="d-flex gap-2">
+                  <a class="btn btn-sm btn-outline-primary"
+                     href="/assignments/<%= assignment.id %>/edit">Edit</a>
+                  <a class="btn btn-sm btn-outline-danger"
+                     href="/assignments/<%= assignment.id %>/delete">Delete</a>
+                </div>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</main>
+
+<%- include('partials/footer') %>

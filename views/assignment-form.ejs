@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+<%- include('partials/main_nav') %>
+
+<main class="container flex-grow-1 py-5">
+  <section class="form-panel p-4">
+    <h1 class="mb-4"><%= title %></h1>
+
+    <% if (error) { %>
+      <p class="alert alert-danger" role="alert"><%= error %></p>
+    <% } %>
+
+    <form action="<%= formAction %>" method="post">
+      <div class="mb-3">
+        <label class="form-label" for="title">Assignment title</label>
+        <input class="form-control" id="title" name="title" type="text"
+               value="<%= assignment.title %>" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="course">Course</label>
+        <input class="form-control" id="course" name="course" type="text"
+               value="<%= assignment.course %>" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="dueDate">Due date</label>
+        <input class="form-control" id="dueDate" name="dueDate" type="date"
+               value="<%= assignment.dueDate %>" required>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label" for="status">Status</label>
+        <select class="form-select" id="status" name="status" required>
+          <option value="To Do" <%= assignment.status === 'To Do' ? 'selected' : '' %>>To Do</option>
+          <option value="In Progress" <%= assignment.status === 'In Progress' ? 'selected' : '' %>>In Progress</option>
+          <option value="Complete" <%= assignment.status === 'Complete' ? 'selected' : '' %>>Complete</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Save Assignment</button>
+      <a class="btn btn-outline-secondary" href="/assignments">Cancel</a>
+    </form>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

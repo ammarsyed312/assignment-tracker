@@ -1,0 +1,45 @@
+body {
+  background-color: #f4f7fb;
+  color: #182c46;
+}
+
+.site-header {
+  background-color: #182c46;
+}
+
+.site-header .nav-link {
+  color: #e7effa;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.splash-panel,
+.form-panel,
+.directory-panel {
+  background-color: #fff;
+  border: 1px solid #dbe3ee;
+  border-radius: 0.75rem;
+}
+
+.splash-panel {
+  background-color: #eaf1fb;
+}
+
+.form-panel {
+  max-width: 38rem;
+}
+
+.directory-panel thead th {
+  background-color: #eaf1fb;
+  color: #182c46;
+  white-space: nowrap;
+}
+
+.site-footer {
+  background-color: #fff;
+  border-top: 1px solid #dbe3ee;
+}

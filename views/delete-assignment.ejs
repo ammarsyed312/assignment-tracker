@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<%- include('partials/main_nav') %>
+
+<main class="container flex-grow-1 py-5">
+  <section class="form-panel p-4">
+    <h1 class="mb-3"><%= title %></h1>
+    <p>Are you sure you want to delete <strong><%= assignment.title %></strong>?</p>
+
+    <form action="/assignments/<%= assignment.id %>/delete" method="post">
+      <button class="btn btn-danger" type="submit">Confirm Delete</button>
+      <a class="btn btn-outline-secondary" href="/assignments">Cancel</a>
+    </form>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
